@@ -12,7 +12,15 @@ namespace Id4Server
     {
         public static List<TestUser> Users = new List<TestUser>
         {
-            new TestUser{SubjectId = "818727", Username = "alice", Password = "alice",
+             new TestUser{SubjectId = "888000", Username = "jacky", Password = "1",
+                Claims =
+                {
+                    new Claim(JwtClaimTypes.Name, "Jacky"),
+                    new Claim(JwtClaimTypes.Role, "Admin"),
+
+                }
+            },
+            new TestUser{SubjectId = "818727", Username = "jacky", Password = "1",
                 Claims =
                 {
                     new Claim(JwtClaimTypes.Name, "Alice Smith"),
@@ -37,6 +45,7 @@ namespace Id4Server
                     new Claim("location", "somewhere")
                 }
             }
+           
         };
     }
 }

@@ -40,6 +40,8 @@ namespace Id4Server.Home
             return NotFound();
         }
 
+       
+
         /// <summary>
         /// Shows the error page
         /// </summary>

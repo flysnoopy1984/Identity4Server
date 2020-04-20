@@ -136,3 +136,4 @@ C:\JKY\Project\Identity4Server\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAna
 C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.Views.pdb
 C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.csproj.CopyComplete
 C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.csprojAssemblyReference.cache
+C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Razor\Views\Account\Info.cshtml.g.cs
