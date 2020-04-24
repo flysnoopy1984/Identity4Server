@@ -3,7 +3,6 @@
 
 
 using Id4Server;
-using Id4Server.Models;
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Events;
@@ -20,7 +19,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Id4Server.Controller.Account
+namespace Id4WebUI
 {
     /// <summary>
     /// This sample controller implements a typical login/logout/provision workflow for local and external accounts.
@@ -29,7 +28,7 @@ namespace Id4Server.Controller.Account
     /// </summary>
     [SecurityHeaders]
     [AllowAnonymous]
-    public class AccountController: Microsoft.AspNetCore.Mvc.Controller
+    public class AccountController : Controller
     {
         private readonly TestUserStore _users;
         private readonly IIdentityServerInteractionService _interaction;
@@ -71,8 +70,6 @@ namespace Id4Server.Controller.Account
 
             return View(vm);
         }
-
-      
 
         /// <summary>
         /// Handle postback from username/password login

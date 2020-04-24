@@ -4,7 +4,7 @@
 
 using System;
 
-namespace Id4Server.Controller.Account
+namespace Id4WebUI
 {
     public class AccountOptions
     {

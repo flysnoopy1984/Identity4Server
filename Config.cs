@@ -12,6 +12,8 @@ namespace Id4Server
 {
     public static class Config
     {
+        public const string apiName_ContentCenter = "ccApi";
+        public const string apiName2_ContentCenter = "ccApi2";
         public static IEnumerable<IdentityResource> Ids =>
             new IdentityResource[]
             { 
@@ -23,14 +25,14 @@ namespace Id4Server
         public static IEnumerable<ApiResource> Apis =>
             new ApiResource[] 
             { 
-                new ApiResource("ccApi","API for ContentCenter",new List<string>(){
-                    JwtClaimTypes.Name,
-                    JwtClaimTypes.GivenName,
-                    JwtClaimTypes.Email,
-                    JwtClaimTypes.Address,
-                    JwtClaimTypes.WebSite
-                }),
-              
+                //new ApiResource(apiName_ContentCenter,"API for ContentCenter",new List<string>(){
+                //    JwtClaimTypes.Name,
+                //    JwtClaimTypes.Email
+                  
+                //}),
+                  new ApiResource(apiName_ContentCenter,"API for ContentCenter"),
+                  new ApiResource(apiName2_ContentCenter,"API 2"),
+
             };
         
         public static IEnumerable<Client> Clients =>
@@ -38,9 +40,9 @@ namespace Id4Server
             {
                 new Client
                 {
-                    ClientId = "jacky",
+                    ClientId = "ccClient",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = {"ccApi"},
+                    AllowedScopes = {apiName_ContentCenter},
                     ClientSecrets =
                     {
                         new Secret("shanghai".Sha256())
@@ -48,9 +50,9 @@ namespace Id4Server
                 },
                  new Client
                 {
-                    ClientId = "userPwd",
+                    ClientId = "ccUserPwd",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-                    AllowedScopes = {"ccApi"},
+                    AllowedScopes = {apiName2_ContentCenter},
                     ClientSecrets =
                     {
                         new Secret("shanghai".Sha256())
@@ -58,10 +60,10 @@ namespace Id4Server
                 },
                 new Client
                 {
-                    ClientId = "mvc",
+                    ClientId = "ccPage",
                     ClientSecrets = { new Secret("shanghai".Sha256()) },
                   
-                    AllowedGrantTypes = GrantTypes.Code,
+                    AllowedGrantTypes = GrantTypes.Implicit,
                     RequireConsent = false,
                     RequirePkce = true,
 
@@ -75,7 +77,7 @@ namespace Id4Server
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "ccApi"
+                        apiName_ContentCenter
                     },
                     AllowOfflineAccess = true
                 }

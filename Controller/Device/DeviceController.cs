@@ -5,7 +5,7 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Id4Server.Models;
+using Id4Server;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
@@ -15,11 +15,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Id4Server.Device
+namespace Id4WebUI.Device
 {
     [Authorize]
     [SecurityHeaders]
-    public class DeviceController : Microsoft.AspNetCore.Mvc.Controller
+    public class DeviceController : Controller
     {
         private readonly IDeviceFlowInteractionService _interaction;
         private readonly IClientStore _clientStore;

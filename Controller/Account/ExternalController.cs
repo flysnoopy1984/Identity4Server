@@ -1,3 +1,4 @@
+using Id4Server;
 using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Events;
@@ -16,11 +17,11 @@ using System.Security.Claims;
 using System.Security.Principal;
 using System.Threading.Tasks;
 
-namespace Id4Server.Controller.Account
+namespace Id4WebUI
 {
     [SecurityHeaders]
     [AllowAnonymous]
-    public class ExternalController : Microsoft.AspNetCore.Mvc.Controller
+    public class ExternalController : Controller
     {
         private readonly TestUserStore _users;
         private readonly IIdentityServerInteractionService _interaction;

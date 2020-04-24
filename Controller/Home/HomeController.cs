@@ -2,7 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
-using Id4Server.Models;
+using Id4Server;
 using IdentityServer4.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -11,11 +11,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
-namespace Id4Server.Home
+namespace Id4WebUI
 {
     [SecurityHeaders]
     [AllowAnonymous]
-    public class HomeController : Microsoft.AspNetCore.Mvc.Controller
+    public class HomeController : Controller
     {
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IWebHostEnvironment _environment;
@@ -40,8 +40,6 @@ namespace Id4Server.Home
             return NotFound();
         }
 
-       
-
         /// <summary>
         /// Shows the error page
         /// </summary>
@@ -64,5 +62,27 @@ namespace Id4Server.Home
 
             return View("Error", vm);
         }
+
+        //public IActionResult Error(string errorId)
+        //{
+        //    var vm = new ErrorViewModel();
+
+        //    // retrieve error details from identityserver
+        //    //var r =  _interaction.GetErrorContextAsync(errorId);
+        //    //r.Wait();
+        //    //var message = r.Result;
+        //    //if (message != null)
+        //    //{
+        //    //    vm.Error = message;
+
+        //    //    if (!_environment.IsDevelopment())
+        //    //    {
+        //    //        // only show in development
+        //    //        message.ErrorDescription = null;
+        //    //    }
+        //    //}
+
+        //    return View("Error", vm);
+        //}
     }
 }
