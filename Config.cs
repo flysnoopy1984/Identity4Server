@@ -68,7 +68,8 @@ namespace Id4Server
             {
                 new Client
                 {
-                    ClientId = "ccClient",
+                    ClientId = "BookClient",
+                    Description = "云艺书站",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes = {apiName_ContentCenter},
                     ClientSecrets =

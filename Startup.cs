@@ -40,13 +40,8 @@ namespace Id4Server
                  .AddWeChat(o =>
                  {
                      o.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                     //o.sin
                      o.AppId = "wx0b7a2be2734e3619";
                      o.AppSecret = "75d20b508b2366745002ac3d3eb9886f";
-                 //    o.UserInformationEndpoint = "http://id4.iqianba.cn/WX/UserInfo";
-                   //  o.CallbackPath = "/WX/LoginCallBack";
-
-
                  });
                  //.AddOpenIdConnect("oidc", o =>
                  // {
