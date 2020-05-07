@@ -137,8 +137,6 @@ C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.Views.pdb
 C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.csproj.CopyComplete
 C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.csprojAssemblyReference.cache
 C:\JKY\Project\Identity4Server\obj\Debug\netcoreapp3.1\Razor\Views\Account\Info.cshtml.g.cs
-D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.csproj.CoreCompileInputs.cache
-D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.MvcApplicationPartsAssemblyInfo.cache
 D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.RazorAssemblyInfo.cache
 D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.RazorAssemblyInfo.cs
 D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.AssemblyInfoInputs.cache
@@ -278,3 +276,10 @@ D:\Project\SourceCode\Identity4Server\bin\Debug\netcoreapp3.1\Id4Server.Views.pd
 D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.dll
 D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.pdb
 D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.csprojAssemblyReference.cache
+D:\Project\SourceCode\Identity4Server\bin\Debug\netcoreapp3.1\LYM.AspNetCore.Authentication.WeChat.dll
+D:\Project\SourceCode\Identity4Server\bin\Debug\netcoreapp3.1\NLog.dll
+D:\Project\SourceCode\Identity4Server\bin\Debug\netcoreapp3.1\NLog.config
+D:\Project\SourceCode\Identity4Server\bin\Debug\netcoreapp3.1\IQB.Util.dll
+D:\Project\SourceCode\Identity4Server\bin\Debug\netcoreapp3.1\IQB.Util.pdb
+D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.csproj.CoreCompileInputs.cache
+D:\Project\SourceCode\Identity4Server\obj\Debug\netcoreapp3.1\Id4Server.MvcApplicationPartsAssemblyInfo.cache

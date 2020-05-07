@@ -1,6 +1,7 @@
 ﻿
 
-using Id4Server.Models;
+
+using Id4WebUI;
 using IdentityServer4.Stores;
 using Microsoft.AspNetCore.Mvc;
 using System;

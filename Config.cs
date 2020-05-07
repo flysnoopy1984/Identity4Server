@@ -35,6 +35,34 @@ namespace Id4Server
 
             };
         
+        private static Client NewOidcClient(string clientId,string pwd,string returnHost)
+        {
+            return new Client
+            {
+                ClientId = clientId,
+                ClientSecrets = { new Secret(pwd.Sha256()) },
+
+                AllowedGrantTypes = GrantTypes.Implicit,
+                RequireConsent = true,
+                // RequirePkce = true,
+
+                // where to redirect to after login
+                RedirectUris = { $"http://{returnHost}/signin-oidc" },//
+
+                // where to redirect to after logout
+                PostLogoutRedirectUris = { $"http://{returnHost}/signout-callback-oidc" },
+
+                AllowedScopes = new List<string>
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        apiName_ContentCenter
+                    },
+
+                AllowOfflineAccess = true,
+                //  AllowAccessTokensViaBrowser = true,
+            };
+        }
         public static IEnumerable<Client> Clients =>
             new Client[] 
             {
@@ -58,29 +86,33 @@ namespace Id4Server
                         new Secret("shanghai".Sha256())
                     }
                 },
-                new Client
-                {
-                    ClientId = "ccPage",
-                    ClientSecrets = { new Secret("shanghai".Sha256()) },
+                 NewOidcClient("ccUITest","shanghai","test.iqianba.cn"),
+                 NewOidcClient("cclocalhost","shanghai","localhost:5002")
+                //new Client
+                //{
+                //    ClientId = "ccUITest",
+                //    ClientSecrets = { new Secret("shanghai".Sha256()) },
                   
-                    AllowedGrantTypes = GrantTypes.Implicit,
-                    RequireConsent = false,
-                    RequirePkce = true,
+                //    AllowedGrantTypes = GrantTypes.Implicit,
+                //    RequireConsent = true,
+                //   // RequirePkce = true,
 
-                    // where to redirect to after login
-                    RedirectUris = { "http://localhost:5002/signin-oidc" },//
+                //    // where to redirect to after login
+                //    RedirectUris = { "http://test.iqianba.cn/signin-oidc" },//
 
-                    // where to redirect to after logout
-                    PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
+                //    // where to redirect to after logout
+                //    PostLogoutRedirectUris = { "http://test.iqianba.cn/signout-callback-oidc" },
 
-                    AllowedScopes = new List<string>
-                    {
-                        IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile,
-                        apiName_ContentCenter
-                    },
-                    AllowOfflineAccess = true
-                }
+                //    AllowedScopes = new List<string>
+                //    {
+                //        IdentityServerConstants.StandardScopes.OpenId,
+                //        IdentityServerConstants.StandardScopes.Profile,
+                //        apiName_ContentCenter
+                //    },
+                    
+                //    AllowOfflineAccess = true,
+                //  //  AllowAccessTokensViaBrowser = true,
+                //}
             };
         
     }

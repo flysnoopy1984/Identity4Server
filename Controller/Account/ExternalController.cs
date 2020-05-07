@@ -5,6 +5,7 @@ using IdentityServer4.Events;
 using IdentityServer4.Services;
 using IdentityServer4.Stores;
 using IdentityServer4.Test;
+using IQB.Util;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -78,7 +79,7 @@ namespace Id4WebUI
                         { "scheme", provider },
                     }
                 };
-
+             
                 return Challenge(props, provider);
             }
         }
@@ -110,6 +111,11 @@ namespace Id4WebUI
                 // in this sample we don't show how that would be done, as our sample implementation
                 // simply auto-provisions new external user
                 user = AutoProvisionUser(provider, providerUserId, claims);
+                NLogUtil.Id4_InfoTxt($"Callback:providerUserId{providerUserId}");
+                foreach(var c in claims.ToList())
+                {
+                    NLogUtil.Id4_InfoTxt($"Callback:{c.Type}-{c.Value}"); 
+                }
             }
 
             // this allows us to collect any additional claims or properties
